@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Object Example</title>
+    </head>
+    <body>
+        <h2>
+            Json Object Example
+        </h2>
+        <p id="result">
+        </p>
+        <script>
+            let student ={"rollno":12,"name":"Nilakshi",
+            "marks":90
+            };
+            let output="rollno:"+student.rollno+"<br>"+
+            "name:"+student.name+"<br>"+
+            "marks:"+student.marks+"<br>";
+
+        document.getElementById("result").innerHTML=output;
+        </script>
+    </body>
+</html>

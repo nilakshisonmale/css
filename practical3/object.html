@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON Object Example</title>
+    </head>
+    <body>
+        <h2>JSON Object Output</h2>
+        <p id="result"></p>
+        <script>
+            let student={
+                "Name":"nilakshi",
+                "Age":19,
+                "Course":"Computer Science",
+                "Marks":{
+                    "html":85,
+                    "css":90,
+                    "javascript":88,
+                }
+            };
+
+            let output="Name:" +student.Name +"<br>"+
+            "Age:" +student.Age +"<br>"+
+            "Course:" +student.Course +"<br>"+
+            "HTML Marks:" +student.Marks.html +"<br>";
+
+            document.getElementById("result").innerHTML=output;
+        </script>
+    </body>
+</html>
