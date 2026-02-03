@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Parent-Child Controller Example</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- External JS Controller -->
+    <script src="controller.js"></script>
+</head>
+
+<body>
+
+<h2>Parent-Child Controller Example</h2>
+
+<!-- Parent Controller -->
+<div ng-controller="ParentCtrl">
+    <h3>College Details (Parent)</h3>
+    <p>College: {{ college }}</p>
+    <p>Department: {{ department }}</p>
+
+    <hr>
+
+    <!-- Child Controller Nested Inside Parent -->
+    <div ng-controller="ChildCtrl">
+        <h3>Student Details (Child)</h3>
+        <p>Name: {{ studentName }}</p>
+        <p>Roll No: {{ rollNo }}</p>
+        <p>Marks: {{ marks }}</p>
+    </div>
+</div>
+
+</body>
+</html>

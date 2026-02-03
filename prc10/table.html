@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Student Information Table</title>
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="studentCtrl">
+
+<h2>Student Information Table</h2>
+
+<table border="1" width="60%" cellpadding="10">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Marks</th>
+    </tr>
+
+    <!-- ng-repeat -->
+    <tr ng-repeat="student in students">
+        <td>{{student.roll}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.marks}}</td>
+    </tr>
+</table>
+
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("studentCtrl", function ($scope) {
+        $scope.students = [
+            { roll: 1, name: "Rohan",  course: "HTML",       marks: 85 },
+            { roll: 2, name: "Sneha",  course: "CSS",        marks: 90 },
+            { roll: 3, name: "Amit",   course: "JavaScript", marks: 88 },
+            { roll: 4, name: "Pooja",  course: "HTML",       marks: 92 },
+            { roll: 5, name: "Rahul",  course: "CSS",        marks: 80 },
+            { roll: 6, name: "Anjali", course: "JavaScript", marks: 89 },
+            { roll: 7, name: "Vikram", course: "HTML",       marks: 84 },
+            { roll: 8, name: "Neha",   course: "CSS",        marks: 91 },
+            { roll: 9, name: "Arjun",  course: "JavaScript", marks: 87 },
+            { roll: 10, name: "Kavita", course: "HTML",       marks: 93 }
+        ];
+    });
+</script>
+
+</body>
+</html>

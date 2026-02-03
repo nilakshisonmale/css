@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details – Even Row Styling</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        th {
+            background-color: #455a64;
+            color: white;
+        }
+
+        /* EVEN ROW STYLE */
+        .even-row {
+            background-color: #dcedc8; /* Light Green */
+        }
+    </style>
+</head>
+
+<body ng-controller="staffCtrl">
+
+    <h2 style="text-align:center;">Staff Details (Even Rows Highlighted)</h2>
+
+    <table>
+        <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+        </tr>
+
+        <tr ng-repeat="staff in staffList"
+            ng-class-even="'even-row'">
+            <td>{{staff.id}}</td>
+            <td>{{staff.name}}</td>
+            <td>{{staff.dept}}</td>
+            <td>{{staff.designation}}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("staffCtrl", function($scope) {
+            $scope.staffList = [
+                {id: 101, name: "Amit", dept: "HR", designation: "Manager"},
+                {id: 102, name: "Riya", dept: "IT", designation: "Developer"},
+                {id: 103, name: "Kunal", dept: "Finance", designation: "Accountant"},
+                {id: 104, name: "Sneha", dept: "Admin", designation: "Officer"},
+                {id: 105, name: "Rohan", dept: "Sales", designation: "Executive"},
+                {id: 106, name: "Neha", dept: "IT", designation: "Tester"},
+                {id: 107, name: "Pooja", dept: "HR", designation: "Recruiter"},
+                {id: 108, name: "Ajay", dept: "Support", designation: "Technician"},
+                {id: 109, name: "Vinay", dept: "Marketing", designation: "Coordinator"},
+                {id: 110, name: "Meera", dept: "Accounts", designation: "Clerk"}
+            ];
+        });
+    </script>
+
+</body>
+</html>

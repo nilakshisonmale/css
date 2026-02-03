@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Controllers</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- External Controller -->
+    <script src="controller.js"></script>
+</head>
+
+<body>
+
+<h2>Practical No. 12 – AngularJS Controllers</h2>
+
+<!-- 1. BASIC CONTROLLER -->
+<div ng-controller="BasicCtrl">
+    <h3>1. Basic Controller</h3>
+    <p>{{ message }}</p>
+    <button ng-click="greet()">Click Me</button>
+</div>
+
+<hr>
+
+<!-- 2. NESTED CONTROLLERS -->
+<div ng-controller="ParentCtrl">
+    <h3>2. Parent Controller</h3>
+    <p>Parent Data: {{ parentData }}</p>
+
+    <div ng-controller="ChildCtrl">
+        <h4>Child Controller</h4>
+        <p>Inherited Data: {{ parentData }}</p>
+        <p>Child Data: {{ childData }}</p>
+    </div>
+</div>
+
+<hr>
+
+<!-- 4. FILTERS IN CONTROLLER -->
+<div ng-controller="FilterCtrl">
+    <h3>3. Filters in Controller</h3>
+    <p>Name (Uppercase): {{ name | uppercase }}</p>
+    <p>Fees (Currency): {{ fees | currency:"₹" }}</p>
+</div>
+
+</body>
+</html>
