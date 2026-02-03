@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="mouseApp">
+<head>
+    <title>Mouse Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="mouseCtrl" style="text-align:center;">
+
+<h2>AngularJS Mouse Events</h2>
+
+<div style="width:800px; height:250px; border:1px solid black; margin:auto; padding:10px;"
+     ng-mousemove="showCoordinates($event)"
+     ng-mouseenter="message='Mouse Entered!'"
+     ng-mouseleave="message='Mouse Left!'">
+
+    <p>{{ message }}</p>
+    <p>X: {{ x }} | Y: {{ y }}</p>
+</div>
+
+<script>
+var app = angular.module("mouseApp", []);
+
+app.controller("mouseCtrl", function($scope) {
+    $scope.message = "Move mouse here...";
+
+    $scope.showCoordinates = function(event) {
+        $scope.x = event.offsetX;
+        $scope.y = event.offsetY;
+    };
+});
+</script>
+
+</body>
+</html>

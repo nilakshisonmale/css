@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="keyApp">
+<head>
+    <title>Keyboard Event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="keyCtrl" style="text-align:center;">
+
+<h2>AngularJS Keyboard Event</h2>
+
+<input type="text" placeholder="Type something..."
+       ng-keypress="increaseCount()" />
+<p>Key Press Count: {{ count }}</p>
+
+<script>
+var app = angular.module("keyApp", []);
+
+app.controller("keyCtrl", function($scope) {
+    $scope.count = 0;
+
+    $scope.increaseCount = function() {
+        $scope.count++;
+    };
+});
+</script>
+
+</body>
+</html>
