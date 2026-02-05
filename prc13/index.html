@@ -1,28 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
-    <title>External Controller Example</title>
-
-    <!-- AngularJS Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-
-    <!-- External Controller File -->
-    <script src="app.js"></script>
+    <title>Message Display</title>
 </head>
+<body>
 
-<body ng-controller="ParentCtrl">
+    <p id="msg">WELCOME</p>
+   
 
-    <h2>{{message1}}</h2>
-    <p>Department: {{co}}</p>
-
-    <hr>
-
-    <div ng-controller="ChildCtrl">
-        <h3>{{message2}}</h3>
-        <p>Name: {{Nilakshi}}</p>
-        <p>Roll No: {{109}}</p>
-        <p>Marks: {{80}}</p>
-    </div>
-
+    <script src="controller.js"></script>
 </body>
 </html>
