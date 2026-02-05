@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Uppercase and Lowercase Filter</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+<h2>AngularJS Filters Example</h2>
+
+<div ng-controller="TextCtrl">
+    
+    <p>Original Text: {{ text }}</p>
+    
+    <p>Uppercase Text: {{ text | uppercase }}</p>
+    
+    <p>Lowercase Text: {{ text | lowercase }}</p>
+
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("TextCtrl", function($scope){
+        $scope.text = "Client Side Scripting";
+    });
+</script>
+
+</body>
+</html>

@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
-    <title>Student Table</title>
+    <title>Student Table with orderBy</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- External Controller -->
+    <script src="controller.js"></script>
 </head>
+
 <body>
 
-<h2>Student Details</h2>
+<h2>Student Table - Sorted by Name</h2>
 
-<a href="students.jsp">Display Students (Order By Name)</a>
+<div ng-controller="StudentCtrl">
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr ng-repeat="s in students | orderBy:'name'">
+            <td>{{ s.name }}</td>
+            <td>{{ s.rollno }}</td>
+            <td>{{ s.marks }}</td>
+        </tr>
+
+    </table>
+
+</div>
 
 </body>
 </html>
